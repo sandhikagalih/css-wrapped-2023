@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>:is Example</title>
+  <style>
+    /* header h1,
+    header a {
+      color: green;
+    } */
+
+    header :is(h1, :a, .btn, small) {
+      color: green;
+    }
+
+    /* header p:hover,
+    .card p:hover {
+      color: red;
+    } */
+
+    :is(header, .card) p:hover {
+      color: red;
+    }
+
+    /* specificity yang diambil adalah yang paling besar */
+    .card :is(.title, p a) {
+      color: red;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: .5em 1em;
+      background: #234;
+      color: white;
+    }
+
+
+    .flow>*+* {
+      margin-top: var(--flow-space, 1em);
+    }
+
+
+    /* general styling */
+
+    :root {
+      --clr-primary: #ee6352;
+      --clr-body: #333;
+      --clr-bg: #ddd;
+      --spacer: 1rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    body {
+      font-family: system-ui;
+      min-height: 100vh;
+      font-size: 1.125em;
+      line-height: 1.6;
+      color: var(--clr-body);
+      background: var(--clr-bg);
+    }
+
+    .card {
+      padding: 3em;
+      box-shadow: 0 0 3em rgba(0, 0, 0, .15);
+      background: white;
+    }
+
+    .title {
+      font-weight: 900;
+      line-height: .8;
+    }
+
+    .container {
+      width: min(90%, 62.5rem);
+      margin: 0 auto;
+    }
+
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+  </style>
+</head>
+
+<body>
+  <header class="flow">
+    <h1>The <code>:is</code> pseudo-class</h1>
+    <p>A <span class="highlight">super useful</span> pseudo-class for writing less CSS</p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:is">Read more about it here</a>, or <a href="#">watch
+        this video</a> where I take a look at it.</p>
+    <p><a href="#" class="btn">learn more</a></p>
+  </header>
+  <div class="container">
+    <div class="grid">
+      <div class="card is flow">
+        <h2 class="title">Title goes here</h2>
+        <p>Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Aliquid sapiente perferendis nulla
+          sed consequuntur eveniet. Itaque veritatis qui labore quia odio nihil, magni soluta facilis necessitatibus
+          cumque repellendus optio laborum.</p>
+        <h3>I'm causing problems</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ad!</p>
+      </div>
+      <div class="card where flow">
+        <h2 class="title">Another card</h2>
+        <p>Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Aliquid sapiente perferendis nulla
+          sed consequuntur eveniet. Itaque veritatis qui labore quia odio nihil, magni soluta facilis necessitatibus
+          cumque repellendus optio laborum.</p>
+        <h3>I'm causing problems</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ad!</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
