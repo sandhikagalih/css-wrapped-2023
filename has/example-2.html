@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>:has Example 2</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    body {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      padding: 3rem;
+      font-family: system-ui;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .card {
+      box-shadow: 0 0 1rem rgb(0 0 0 / 0.2);
+    }
+
+    .card:has(.media) {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+    }
+
+    .card:has(.icon) {
+      padding: 1rem;
+    }
+
+    .card:has(.icon)>.card__content {
+      padding: 0;
+    }
+
+    .card__content {
+      padding: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card__content">
+      <h2 class="small-title">Something interesting</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <p>Hic recusandae quos dolores, temporibus commodi ex aliquid!</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="media" src="img/ex2/1.jpg" alt="">
+    <div class="card__content">
+      <h2 class="small-title">Something interesting</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg class="icon" viewBox="0 0 448 512" width="100" title="beer">
+      <path
+        d="M368 96h-48V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56v400c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24v-42.11l80.606-35.977C429.396 365.063 448 336.388 448 304.86V176c0-44.112-35.888-80-80-80zm16 208.86a16.018 16.018 0 0 1-9.479 14.611L320 343.805V160h48c8.822 0 16 7.178 16 16v128.86zM208 384c-8.836 0-16-7.164-16-16V144c0-8.836 7.164-16 16-16s16 7.164 16 16v224c0 8.836-7.164 16-16 16zm-96 0c-8.836 0-16-7.164-16-16V144c0-8.836 7.164-16 16-16s16 7.164 16 16v224c0 8.836-7.164 16-16 16z" />
+    </svg>
+    <div class="card__content">
+      <h2 class="small-title">Something interesting</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <p>Hic recusandae quos dolores, temporibus commodi ex aliquid!</p>
+    </div>
+  </div>
+</body>
+
+</html>

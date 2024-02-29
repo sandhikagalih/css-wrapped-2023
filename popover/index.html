@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popover</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button class="menu-btn" popovertarget="menu">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" alt="">
+  </button>
+
+  <div popover role="menu" id="menu">
+    <button class="close-btn" popovertarget="menu" popovertargetaction="hide">
+      <span>❌</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <ul>
+      <li><a href="#">Typography</a></li>
+      <li><a href="#">Foundations</a></li>
+      <li><a href="#">Color</a></li>
+      <li><a href="#">Interactions</a></li>
+      <li><a href="#">Components</a></li>
+      <li><a href="#">Responsive</a></li>
+    </ul>
+  </div>
+
+  <h1>JS-Free hamburger menu demo</h1>
+  <h2>With the Popover API</h2>
+  <p>Click open the hamburger menu to see a demo of JavaScript-free interaction handling! By using the
+    <code>popover</code> attribute, you can allow the browser to handle the keyboard management (including navigation
+    via <kbd>esc</kbd>, <kbd>spacebar</kbd>, and <kbd>enter</kbd>), optional light-dismiss (clicking outside the
+    boundaries of the popover), and click handlers such as on the open and close buttons.
+  </p>
+</body>
+
+</html>

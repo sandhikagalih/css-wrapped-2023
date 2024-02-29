@@ -1,0 +1,71 @@
+@layer design, demo, nesting;
+
+@import 'https://unpkg.com/open-props' layer(design.system);
+@import 'https://unpkg.com/open-props/normalize.min.css' layer(design.system);
+
+@layer demo {
+  .demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--size-10), 1fr));
+    grid-auto-rows: var(--size-10);
+    place-items: center;
+    gap: var(--size-3);
+    max-inline-size: var(--size-content-3);
+  }
+
+  .demo > * {
+    transition: all 0.5s var(--ease-4);
+  }
+}
+
+@layer demo.shapes {
+  .square {
+    background: var(--color);
+    aspect-ratio: 1;
+    inline-size: var(--size, var(--size-10));
+  }
+
+  .circle {
+    background: var(--color);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    inline-size: var(--size, var(--size-10));
+  }
+
+  .triangle {
+    aspect-ratio: 1;
+    border-inline: calc(var(--size) / 2) solid transparent;
+    border-block-end: calc(var(--size) / 1.25) solid var(--color);
+  }
+}
+
+@layer demo.sizes {
+  .sm {
+    --size: var(--size-6);
+  }
+  .lg {
+    --size: var(--size-14);
+    z-index: -1;
+  }
+}
+
+@layer demo.colors {
+  .blue {
+    --color: cyan;
+  }
+  .pink {
+    --color: magenta;
+  }
+  .purple {
+    --color: rebeccapurple;
+  }
+}
+
+@layer demo.support {
+  body {
+    display: grid;
+    place-content: center;
+    padding: var(--size-5);
+    gap: var(--size-5);
+  }
+}

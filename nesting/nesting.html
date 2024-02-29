@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Nesting</title>
+  <link rel="stylesheet" href="init.css">
+  <style>
+    .demo {
+
+      .circle,
+      .triangle {
+        opacity: .25;
+        filter: blur(25px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo">
+    <div class="sm triangle pink"></div>
+    <div class="sm triangle blue"></div>
+    <div class="square blue"></div>
+    <div class="sm square pink"></div>
+    <div class="sm square blue"></div>
+    <div class="circle pink"></div>
+    <div class="sm circle blue"></div>
+    <div class="lg circle purple"></div>
+    <div class="triangle blue"></div>
+    <div class="sm circle pink"></div>
+    <div class="square purple"></div>
+    <div class="sm triangle purple"></div>
+    <div class="sm square pink"></div>
+    <div class="sm square purple"></div>
+    <div class="sm circle blue"></div>
+    <div class="sm circle pink"></div>
+    <div class="lg triangle pink"></div>
+    <div class="sm square pink"></div>
+    <div class="sm square purple"></div>
+    <div class="sm circle blue"></div>
+    <div class="square pink"></div>
+    <div class="sm square pink"></div>
+    <div class="sm square purple"></div>
+    <div class="sm circle blue"></div>
+  </div>
+</body>
+
+</html>
